@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ruby blog</title>
+    <script type="text/javascript">
+        //конструктор объекта Blog
+        function Blog(body, date) {
+            this.body= body;
+            this.date= date;
+        }
+        //Глобальный массив записей в блог
+        //var blog = [new Blog("1","1"), new Blog("2","1"), new Blog("3","1"), new Blog("4","1")];
+       var blog = [new Blog("first link", new Date("12/01/2014")),
+            new Blog("Second link", new Date("3/02/2014")),
+            new Blog("thi is text about pink", new Date("3/14/2014")),
+            new Blog("What are you know", new Date("3/07/2014")),
+            new Blog("lame is king of the next year", new Date("3/15/2014")),
+            new Blog("he-he-he", new Date("5/05/2014")) ];
+
+        var mass = [parseInt(123), parseInt(12), parseInt(3), parseInt(123123), parseInt(1), parseInt(3), parseInt(3131)];
+
+        //показать список записей
+
+        function sortArrayDate(x,y) {
+            if (x.date > y.date) return 1;
+            if (x.date < y.date) return -1;
+            if (x.date== y.date) return 0;
+        }
+
+        function showBlog(numEntries) {
+
+            if (!numEntries)
+                numEntries = blog.length;
+
+            //показать записи
+            blog.sort(sortArrayDate);
+            var i = 0, blogText="";
+            while (i < blog.length && i < numEntries) {
+                if (i % 2 == 0)
+                    blogText += "<p style='background-color:#EEEEEE'>";
+                else
+                    blogText += "<p>";
+
+                blogText += "<strong>" + blog[i].date.getDate() +"/" + (blog[i].date.getMonth()+1) + "/"+blog[i].date.getFullYear()+ "</strong><br />" + blog[i].body + "</p>";
+
+
+                i+=1;
+            }
+            document.getElementById("blog").innerHTML = blogText;
+
+            /*mass.sort(sortArray);
+            var j=0, textMass="";
+            while (j < mass.length) {
+                textMass += "<p>" + mass[j]+ "</p>";
+                j+=1;
+            }
+            document.getElementById("massiv").innerHTML=textMass;*/
+        }
+    </script>
+</head>
+<body onload="showBlog(3);">
+<h3>YouCube - Блог посвященный Кубику-Рубику</h3>
+<img src="images/cube.jpg" alt="YouCube" />
+<div id="blog"></div>
+<input type="button" id="showall" value="Показать все записи" onclick="showBlog();" />
+<div id="massiv">429</div>
+</body>
+</html>
