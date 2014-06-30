@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>example1</title>
+    <script>
+        var testText="Кубистка возыодила в куб два куба и получила восемь. Была ли она кубинкой?";
+        var searchword="Куб";
+
+        function centered() {
+            var buttonwidth = document.getElementById("Search").clientWidth;
+            var html = document.documentElement.clientWidth;
+            var buttonmargin = html/2 - buttonwidth/2;
+            document.getElementById("Search").style.marginLeft=buttonmargin+"px";
+
+        }
+        function load() {
+            document.getElementById("testText").innerHTML=testText;
+            document.getElementById("searchWord").innerHTML=searchword;
+        }
+        function searchText() {
+            alert("Search");
+        }
+    </script>
+</head>
+<body onresize="centered();" onload="centered();load();">
+    <button id="Search"  onclick="searchText();" style="width: 200px">Поиск</button>
+    <p id="testText"></p>
+    <p id="searchWord"></p>
+    <p id="result"></p>
+</body>
+</html>
