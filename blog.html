@@ -49,21 +49,30 @@
             }
             document.getElementById("blog").innerHTML = blogText;
 
-            /*mass.sort(sortArray);
-            var j=0, textMass="";
-            while (j < mass.length) {
-                textMass += "<p>" + mass[j]+ "</p>";
-                j+=1;
+
+        }
+
+        function SearchButton() {
+            var searchWord=document.getElementById("searchText").value;
+            var i;
+            for (i=0; i<blog.length; i++) {
+                //alert(blog[i].body+" "+blog.length);
+                if (blog[i].body.toLowerCase().indexOf(searchWord.toLowerCase()) != -1)
+                    document.getElementById("massiv").innerHTML+="<p>"+blog[i].body+"</p>";
+                //if (blog[i].body.toLowerCase.indexOf(searchWord.toLowerCase() != "-1"))
+                    //
             }
-            document.getElementById("massiv").innerHTML=textMass;*/
+
         }
     </script>
 </head>
 <body onload="showBlog(3);">
 <h3>YouCube - Блог посвященный Кубику-Рубику</h3>
+<input type="text" id="searchText" size="50" maxlength="50"/>
+<input type="button" value="Поиск" onclick="SearchButton()"/><br>
 <img src="images/cube.jpg" alt="YouCube" />
 <div id="blog"></div>
 <input type="button" id="showall" value="Показать все записи" onclick="showBlog();" />
-<div id="massiv">429</div>
+<div id="massiv"></div>
 </body>
 </html>

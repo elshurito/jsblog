@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>example1</title>
     <script>
-        var testText="Кубистка возыодила в куб два куба и получила восемь. Была ли она кубинкой?";
+        var testText="КубКубКубкуб";
         var searchword="Куб";
 
         function centered() {
@@ -20,8 +20,21 @@
         }
         function searchText() {
             var i=0;
-            while i < testText.length
-            var searchIndex = testText.indexOf(searchword, i);
+            var result="";
+            var searchIndex=0;
+            while ((i <= (testText.length-searchword.length)) && (searchIndex != -1)) {
+
+                searchIndex = testText.toLowerCase().indexOf(searchword.toLowerCase(), i);
+                i=searchIndex;
+                if (i>-1)
+                    result+=" "+i+";";
+                else break;
+                i+=1;
+                //alert("i= "+i+"; testText= "+testText.length+"; searchword= "+searchword.length + "; searchIndex= "+searchIndex);
+                document.getElementById("result").innerHTML=result;
+            }
+
+
 
         }
     </script>
