@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="sourse/jquery-2.1.1.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $.ajax({
                 type: "POST",
-                url
-
-           });
+                url: "/ajax.php",
+                dataType: "json",
+                success: function(data)
+                {
+                    &("#text").val(data.id);
+                    $("#p1").text(data.content);
+                }
+               });
         });
+
 
     </script>
 </head>

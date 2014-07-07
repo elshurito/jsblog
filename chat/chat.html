@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <script>
+        function resize() {
+            var col1height;
+            var col2height;
+            col1height=document.getElementById("col1").clientHeight;
+            col2height=document.getElementById("col2").clientHeight;
+            if (col1height>col2height)
+                document.getElementById("col2").style.height=col1height+"px";
+            else
+                document.getElementById("col1").style.height=col2height+"px";
+            alert(col1height+"  "+col2height);
+        }
+    </script>
+
+
+</head>
+<body onload="resize();">
+<div id="base">
+    <div id="top" >top</div>
+    <div id="right">right</div>
+    <div id="menu">menu</div>
+    <div id="col1" class="col">
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    <p>col1</p>
+    </div>
+    <div id="col2" class="col">col2</div>
+</div>
+<input type="button" style="position: absolute;" onclick="resize()"/>
+
+
+</body>
+</html>

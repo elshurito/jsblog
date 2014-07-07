@@ -1,0 +1,40 @@
+.border-container {
+    border: 1px solid red;
+}
+
+.head-block,.top-menu,.top-material,.leftslidebar,.content{
+    background: #cccccc;
+    margin-bottom: 1px;
+}
+
+.head-block {
+    height: 200px;
+    background: url("../images/logo.jpg") no-repeat left center;
+}
+.top-menu {
+    height: 30px;
+    background: #daf2fe;
+}
+.top-menu ul {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.top-menu li {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 3px 10px;
+}
+.top-material {
+    height: 200px;
+    background: #ffffff;
+}
+.leftslidebar,.content {
+    height: 300px;
+}
+.content{
+    border-left: 1px solid #ffffff;
+}
+
+.otstup {
+    margin-top: 30px;
+}
